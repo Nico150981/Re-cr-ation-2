@@ -129,15 +129,15 @@
   .contact a:hover { text-decoration: underline; }
   .tarifs { font-size: 0.95rem; margin-top: 0.8rem; }
 
-  /* CORRECTION DE L'IMAGE ICI */
+  /* CORRECTION ICI : On affiche l'image telle quelle, centrée, sans forcer de cercle */
   .photo-nico {
     display: block;
     width: 100%;
-    max-width: 220px; /* Taille max pour que l'image ne soit pas énorme */
+    max-width: 200px; /* Taille de l'image */
     height: auto;
     margin: 2.5rem auto 1rem;
-    /* J'ai enlevé border-radius et object-fit pour ne pas couper votre image */
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15)); /* Belle ombre douce */
+    border-radius: 0; /* On enlève le cercle forcé */
   }
 
   .cta-zone { text-align: center; margin-top: 1rem; }
@@ -211,10 +211,8 @@
       <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
     </div>
 
-    <!-- L'IMAGE EST MAINTENANT AFFICHÉE EN ENTIER -->
-    <img class="photo-nico" src="visage nico.png" alt="Photo de Nicolas Charreyre">
-    
-    <!-- J'AI SUPPRIMÉ LA LÉGENDE ICI CAR LE NOM EST DÉJÀ DANS L'IMAGE -->
+    <!-- CORRECTION ICI : Le nom du fichier correspond exactement à ce qu'il y a sur GitHub -->
+    <img class="photo-nico" src="visage_nico.png" alt="Photo de Nicolas Charreyre">
 
     <div class="cta-zone">
       <a class="btn" href="https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/site-final/#accueil">Découvrir mon activité en détail →</a>
