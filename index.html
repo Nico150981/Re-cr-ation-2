@@ -18,7 +18,6 @@
   
   body {
     font-family: var(--police-corps);
-    /* CORRECTION DU NOM DE L'IMAGE DE FOND */
     background: url('Fond_site_carte_de_visite_2.jpg') no-repeat center center fixed;
     background-size: cover;
     color: var(--texte-corps);
@@ -29,8 +28,9 @@
   a { color: var(--accent); }
   a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
+  /* J'ai baissé l'opacité de 0.85 à 0.3 pour l'en-tête */
   .entete {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.3);
     padding: 2.5rem 1.5rem 1.5rem;
     text-align: center;
     backdrop-filter: blur(5px);
@@ -49,7 +49,7 @@
   .bande-transition blockquote {
     max-width: 620px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.5); /* Un peu plus transparent aussi */
     backdrop-filter: blur(5px);
     border-radius: 16px;
     padding: 1.1rem 1.4rem;
@@ -59,11 +59,12 @@
     color: var(--accent-fonce);
   }
 
+  /* C'EST ICI : La page du milieu est passée de 0.85 à 0.3 */
   .conteneur {
     max-width: 680px;
     margin: 0 auto;
     padding: 2.5rem 1.5rem 3rem;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.3); 
     backdrop-filter: blur(8px);
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -92,8 +93,10 @@
     gap: 1.2rem;
     margin: 2rem 0 2.5rem;
   }
+  
+  /* Les petites cartes sont aussi plus transparentes (0.6) */
   .card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 14px;
     padding: 1.3rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -109,8 +112,9 @@
   .card:nth-child(2) { border-top: 5px solid #0277BD; }
   .card:nth-child(3) { border-top: 5px solid #D97706; }
   
+  /* Le bloc contact est aussi plus transparent (0.6) */
   .contact {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 16px;
     padding: 1.8rem 1.5rem;
     margin: 2rem 0;
@@ -164,7 +168,7 @@
     padding: 2rem 1.5rem;
     font-size: 0.85rem;
     color: #444;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     margin-top: 2rem;
   }
@@ -215,7 +219,7 @@
       <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
     </div>
 
-    <!-- CORRECTION DU NOM DE LA PHOTO -->
+    <!-- Vérifiez bien ce nom : visage_nico.png ou visage nico.png ? -->
     <img class="photo-nico" src="visage_nico.png" alt="Photo de Nicolas Charreyre">
     <p class="legende-photo">Nicolas Charreyre</p>
 
@@ -231,7 +235,6 @@
   </footer>
   
   <div id="grille-tarifaire-modal" onclick="this.style.display='none';" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:1000; align-items:center; justify-content:center; padding:2rem; cursor:zoom-out;">
-    <!-- CORRECTION DU NOM DE LA GRILLE TARIFAIRE -->
     <img src="Tarif_solidaire_2026_.png" alt="Grille tarifaire solidaire 2026" style="max-width:95%; max-height:90vh; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.4);">
   </div>
 </body>
