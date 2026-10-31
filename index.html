@@ -8,7 +8,7 @@
   :root {
     --police-titres: Georgia, 'Times New Roman', serif;
     --police-corps: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --texte-titres: #1c1917; /* Encore plus foncé pour contraster avec le fond */
+    --texte-titres: #1c1917; 
     --texte-corps: #292524;
     --accent: #0D9488;
     --accent-fonce: #0B7A70;
@@ -28,18 +28,11 @@
   a { color: var(--accent); }
   a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-  /* En-tête quasi transparent */
+  /* En-tête sans fond */
   .entete {
-    background: rgba(255, 255, 255, 0.05);
+    background: transparent;
     padding: 2.5rem 1.5rem 1.5rem;
     text-align: center;
-    backdrop-filter: blur(5px);
-  }
-  .entete img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 12px;
   }
 
   .bande-transition {
@@ -49,45 +42,48 @@
   .bande-transition blockquote {
     max-width: 620px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.1); 
-    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.2); /* Un tout petit peu de blanc pour la citation */
+    backdrop-filter: blur(5px);
     border-radius: 16px;
     padding: 1.1rem 1.4rem;
     font-family: var(--police-titres);
     font-style: italic;
     font-size: 1.25rem;
     color: var(--accent-fonce);
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
   }
 
-  /* Le bloc principal est à 0.05 (effet verre dépoli) */
+  /* LE BLOC PRINCIPAL EST TOTALEMENT TRANSPARENT */
   .conteneur {
     max-width: 680px;
     margin: 0 auto;
     padding: 2.5rem 1.5rem 3rem;
-    background: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(10px); /* Flou augmenté pour la lisibilité */
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background: transparent; /* Aucun fond */
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+  
   h1 {
     font-family: var(--police-titres);
     font-size: 1.9rem;
     color: var(--texte-titres);
     text-align: center;
     margin-bottom: 1.3rem;
+    text-shadow: 0 1px 4px rgba(255,255,255,0.9); /* Ombre blanche pour la lisibilité */
   }
+  
   h2 {
     font-family: var(--police-titres);
     font-size: 1.4rem;
     color: var(--texte-titres);
     text-align: center;
     margin-bottom: 1rem;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.9);
   }
+  
   .conteneur p { 
     margin-bottom: 1.2rem; 
-    text-shadow: 0 1px 3px rgba(255,255,255,0.6); /* Petite ombre blanche pour détacher le texte du fond */
+    text-shadow: 0 1px 4px rgba(255,255,255,0.9); /* Ombre sur le texte */
   }
 
   .grid {
@@ -97,9 +93,9 @@
     margin: 2rem 0 2.5rem;
   }
   
-  /* Cartes à 0.15 */
+  /* Les cartes gardent un léger voile pour la lisibilité */
   .card {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.25);
     border-radius: 14px;
     padding: 1.3rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -111,14 +107,14 @@
     color: var(--texte-titres);
     margin-bottom: 0.5rem;
   }
-  .card p { font-size: 0.98rem; margin-bottom: 0; }
+  .card p { font-size: 0.98rem; margin-bottom: 0; text-shadow: none; /* Pas besoin d'ombre ici grâce au fond blanc */ }
   .card:nth-child(1) { border-top: 5px solid #0D9488; }
   .card:nth-child(2) { border-top: 5px solid #0277BD; }
   .card:nth-child(3) { border-top: 5px solid #D97706; }
   
-  /* Bloc contact à 0.15 */
+  /* Le bloc contact garde un léger voile */
   .contact {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.25);
     border-radius: 16px;
     padding: 1.8rem 1.5rem;
     margin: 2rem 0;
@@ -132,7 +128,7 @@
     color: var(--texte-titres);
     margin-bottom: 0.8rem;
   }
-  .contact p { margin-bottom: 0.6rem; }
+  .contact p { margin-bottom: 0.6rem; text-shadow: none; }
   .contact a { font-weight: 600; text-decoration: none; }
   .contact a:hover { text-decoration: underline; }
   .tarifs { font-size: 0.95rem; margin-top: 0.8rem; }
@@ -145,13 +141,14 @@
     object-fit: cover;
     margin: 2rem auto 0.6rem;
     border: 4px solid #FFFFFF;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   }
   .legende-photo {
     text-align: center;
     font-size: 0.9rem;
     color: var(--texte-corps);
     margin-bottom: 2.2rem;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.9);
   }
 
   .cta-zone { text-align: center; margin-top: 1rem; }
@@ -169,15 +166,15 @@
   }
   .btn:hover { background: var(--accent-fonce); }
 
-  /* Footer très transparent */
+  /* Footer totalement transparent */
   footer {
     text-align: center;
     padding: 2rem 1.5rem;
     font-size: 0.85rem;
     color: #292524;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
+    background: transparent;
     margin-top: 2rem;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.9);
   }
   footer a { color: inherit; }
 </style>
@@ -185,7 +182,7 @@
 <body>
 
   <header class="entete">
-    <img src="" alt="Re création logo" style="background: rgba(255,255,255,0.1); min-height: 100px; min-width: 200px;">
+    <img src="" alt="Re création logo" style="background: rgba(255,255,255,0.2); min-height: 100px; min-width: 200px; backdrop-filter: blur(5px); border-radius: 12px;">
   </header>
 
   <div class="bande-transition">
@@ -226,7 +223,7 @@
       <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
     </div>
 
-    <!-- LA PHOTO (Vérifiez bien le nom exact de votre fichier) -->
+    <!-- LA PHOTO -->
     <img class="photo-nico" src="visage_nico.png" alt="Photo de Nicolas Charreyre">
     <p class="legende-photo">Nicolas Charreyre</p>
 
