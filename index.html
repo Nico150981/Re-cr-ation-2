@@ -28,7 +28,6 @@
   a { color: var(--accent); }
   a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-  /* En-tête sans fond */
   .entete {
     background: transparent;
     padding: 2.5rem 1.5rem 1.5rem;
@@ -42,7 +41,7 @@
   .bande-transition blockquote {
     max-width: 620px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.2); /* Un tout petit peu de blanc pour la citation */
+    background: rgba(255,255,255,0.2);
     backdrop-filter: blur(5px);
     border-radius: 16px;
     padding: 1.1rem 1.4rem;
@@ -53,12 +52,11 @@
     text-shadow: 0 1px 2px rgba(255,255,255,0.8);
   }
 
-  /* LE BLOC PRINCIPAL EST TOTALEMENT TRANSPARENT */
   .conteneur {
     max-width: 680px;
     margin: 0 auto;
     padding: 2.5rem 1.5rem 3rem;
-    background: transparent; /* Aucun fond */
+    background: transparent;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
@@ -69,7 +67,7 @@
     color: var(--texte-titres);
     text-align: center;
     margin-bottom: 1.3rem;
-    text-shadow: 0 1px 4px rgba(255,255,255,0.9); /* Ombre blanche pour la lisibilité */
+    text-shadow: 0 1px 4px rgba(255,255,255,0.9);
   }
   
   h2 {
@@ -83,7 +81,7 @@
   
   .conteneur p { 
     margin-bottom: 1.2rem; 
-    text-shadow: 0 1px 4px rgba(255,255,255,0.9); /* Ombre sur le texte */
+    text-shadow: 0 1px 4px rgba(255,255,255,0.9);
   }
 
   .grid {
@@ -93,7 +91,6 @@
     margin: 2rem 0 2.5rem;
   }
   
-  /* Les cartes gardent un léger voile pour la lisibilité */
   .card {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 14px;
@@ -107,12 +104,11 @@
     color: var(--texte-titres);
     margin-bottom: 0.5rem;
   }
-  .card p { font-size: 0.98rem; margin-bottom: 0; text-shadow: none; /* Pas besoin d'ombre ici grâce au fond blanc */ }
+  .card p { font-size: 0.98rem; margin-bottom: 0; text-shadow: none; }
   .card:nth-child(1) { border-top: 5px solid #0D9488; }
   .card:nth-child(2) { border-top: 5px solid #0277BD; }
   .card:nth-child(3) { border-top: 5px solid #D97706; }
   
-  /* Le bloc contact garde un léger voile */
   .contact {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 16px;
@@ -133,6 +129,7 @@
   .contact a:hover { text-decoration: underline; }
   .tarifs { font-size: 0.95rem; margin-top: 0.8rem; }
 
+  /* CORRECTION ICI : J'ai enlevé la bordure blanche pour éviter le double rond */
   .photo-nico {
     display: block;
     width: 150px;
@@ -140,9 +137,9 @@
     border-radius: 50%;
     object-fit: cover;
     margin: 2rem auto 0.6rem;
-    border: 4px solid #FFFFFF;
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   }
+  
   .legende-photo {
     text-align: center;
     font-size: 0.9rem;
@@ -166,7 +163,6 @@
   }
   .btn:hover { background: var(--accent-fonce); }
 
-  /* Footer totalement transparent */
   footer {
     text-align: center;
     padding: 2rem 1.5rem;
