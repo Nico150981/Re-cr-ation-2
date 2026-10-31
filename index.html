@@ -8,8 +8,8 @@
   :root {
     --police-titres: Georgia, 'Times New Roman', serif;
     --police-corps: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --texte-titres: #292524;
-    --texte-corps: #3b3835; /* Légèrement plus foncé pour rester lisible sur le fond */
+    --texte-titres: #1c1917; /* Encore plus foncé pour contraster avec le fond */
+    --texte-corps: #292524;
     --accent: #0D9488;
     --accent-fonce: #0B7A70;
   }
@@ -28,9 +28,9 @@
   a { color: var(--accent); }
   a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-  /* En-tête très transparent (0.1) */
+  /* En-tête quasi transparent */
   .entete {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     padding: 2.5rem 1.5rem 1.5rem;
     text-align: center;
     backdrop-filter: blur(5px);
@@ -49,8 +49,8 @@
   .bande-transition blockquote {
     max-width: 620px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.2); /* Citation plus transparente */
-    backdrop-filter: blur(5px);
+    background: rgba(255,255,255,0.1); 
+    backdrop-filter: blur(8px);
     border-radius: 16px;
     padding: 1.1rem 1.4rem;
     font-family: var(--police-titres);
@@ -59,15 +59,15 @@
     color: var(--accent-fonce);
   }
 
-  /* Le bloc principal est passé à 0.15 (très transparent) */
+  /* Le bloc principal est à 0.05 (effet verre dépoli) */
   .conteneur {
     max-width: 680px;
     margin: 0 auto;
     padding: 2.5rem 1.5rem 3rem;
-    background: rgba(255, 255, 255, 0.15); 
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(10px); /* Flou augmenté pour la lisibilité */
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
@@ -85,7 +85,10 @@
     text-align: center;
     margin-bottom: 1rem;
   }
-  .conteneur p { margin-bottom: 1.2rem; }
+  .conteneur p { 
+    margin-bottom: 1.2rem; 
+    text-shadow: 0 1px 3px rgba(255,255,255,0.6); /* Petite ombre blanche pour détacher le texte du fond */
+  }
 
   .grid {
     display: grid;
@@ -94,13 +97,13 @@
     margin: 2rem 0 2.5rem;
   }
   
-  /* Cartes passées à 0.4 */
+  /* Cartes à 0.15 */
   .card {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 14px;
     padding: 1.3rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
   }
   .card h3 {
     font-family: var(--police-titres);
@@ -113,15 +116,15 @@
   .card:nth-child(2) { border-top: 5px solid #0277BD; }
   .card:nth-child(3) { border-top: 5px solid #D97706; }
   
-  /* Bloc contact passé à 0.4 */
+  /* Bloc contact à 0.15 */
   .contact {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     padding: 1.8rem 1.5rem;
     margin: 2rem 0;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
   }
   .contact .nom {
     font-family: var(--police-titres);
@@ -162,16 +165,17 @@
     font-weight: 600;
     font-size: 1.1rem;
     transition: background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
   }
   .btn:hover { background: var(--accent-fonce); }
 
-  /* Footer plus transparent */
+  /* Footer très transparent */
   footer {
     text-align: center;
     padding: 2rem 1.5rem;
     font-size: 0.85rem;
-    color: #444;
-    background: rgba(255, 255, 255, 0.2);
+    color: #292524;
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
     margin-top: 2rem;
   }
@@ -181,7 +185,7 @@
 <body>
 
   <header class="entete">
-    <img src="" alt="Re création logo" style="background: rgba(255,255,255,0.3); min-height: 100px; min-width: 200px;">
+    <img src="" alt="Re création logo" style="background: rgba(255,255,255,0.1); min-height: 100px; min-width: 200px;">
   </header>
 
   <div class="bande-transition">
@@ -222,7 +226,7 @@
       <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
     </div>
 
-    <!-- LA PHOTO -->
+    <!-- LA PHOTO (Vérifiez bien le nom exact de votre fichier) -->
     <img class="photo-nico" src="visage_nico.png" alt="Photo de Nicolas Charreyre">
     <p class="legende-photo">Nicolas Charreyre</p>
 
