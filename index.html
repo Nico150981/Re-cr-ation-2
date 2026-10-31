@@ -84,13 +84,27 @@
     text-shadow: 0 1px 4px rgba(255,255,255,0.9);
   }
 
-  .grid {
+  /* --- EFFET MULTICOLORE --- */
+  .texte-multicolore {
+    background: linear-gradient(90deg, #0D9488, #0277BD, #D97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    /* On remplace l'ombre classique par un drop-shadow compatible avec le texte transparent */
+    filter: drop-shadow(0px 1px 1px rgba(255,255,255,0.8));
+    font-size: 1.1rem;
+  }
+
+  .grid, .ressenti-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 1.2rem;
     margin: 2rem 0 2.5rem;
   }
   
+  /* Cartes classiques */
   .card {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 14px;
@@ -109,6 +123,47 @@
   .card:nth-child(2) { border-top: 5px solid #0277BD; }
   .card:nth-child(3) { border-top: 5px solid #D97706; }
   
+  /* Nouvelles cartes "Ressentis" */
+  .ressenti-carte {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    padding: 1.3rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    backdrop-filter: blur(6px);
+    text-align: center;
+  }
+  .ressenti-carte:nth-child(1) { border-top: 5px solid #0D9488; }
+  .ressenti-carte:nth-child(2) { border-top: 5px solid #0277BD; }
+  .ressenti-carte:nth-child(3) { border-top: 5px solid #D97706; }
+  
+  .ressenti-icone {
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: center;
+  }
+  .ressenti-icone svg {
+    width: 38px;
+    height: 38px;
+  }
+  .ressenti-carte h3 {
+    font-family: var(--police-titres);
+    font-size: 1.05rem;
+    color: var(--texte-titres);
+    margin-bottom: 0.5rem;
+  }
+  .ressenti-carte p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    text-shadow: none;
+    color: var(--texte-corps);
+  }
+  .ressenti-citation {
+    font-style: italic;
+    color: var(--accent-fonce) !important;
+    font-weight: 500;
+  }
+
   .contact {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 16px;
@@ -129,18 +184,16 @@
   .contact a:hover { text-decoration: underline; }
   .tarifs { font-size: 0.95rem; margin-top: 0.8rem; }
 
-  /* CORRECTION ICI : On affiche l'image telle quelle, centrée, sans forcer de cercle */
   .photo-nico {
     display: block;
     width: 100%;
-    max-width: 200px; /* Taille de l'image */
+    max-width: 200px;
     height: auto;
     margin: 2.5rem auto 1rem;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15)); /* Belle ombre douce */
-    border-radius: 0; /* On enlève le cercle forcé */
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
   }
 
-  .cta-zone { text-align: center; margin-top: 1rem; }
+  .cta-zone { text-align: center; margin-top: 1rem; margin-bottom: 2rem; }
   .btn {
     display: inline-block;
     background: var(--accent);
@@ -152,6 +205,8 @@
     font-size: 1.1rem;
     transition: background 0.3s ease;
     box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+    border: none;
+    cursor: pointer;
   }
   .btn:hover { background: var(--accent-fonce); }
 
@@ -180,16 +235,57 @@
   <div class="conteneur">
     <h1>Bienvenue</h1>
 
-    <p>Séances individuelles et personnalisées pour adultes en transition de vie, en surmenage ou en épuisement professionnel et familial. Un espace chaleureux et confidentiel pour ralentir, se reconnecter à son corps, accueillir ses émotions et retrouver un mieux-être par le mouvement, l'expression gestuelle et l'art.</p>
+    <p>Je me déplace à domicile pour des séances individuelles et personnalisées.</p>
 
-    <p>Vous êtes libre d'imaginer, de créer, d'explorer, de vous exprimer et de danser, à votre rythme et dans le respect de votre histoire. La séance peut devenir un espace pour déposer ce qui est vécu, mieux accueillir ses émotions, apaiser ses tensions et renouer progressivement avec soi-même.</p>
+    <!-- APPLICATION DE L'EFFET MULTICOLORE -->
+    <p class="texte-multicolore">Un temps de rencontre pour ralentir, respirer, se détendre, se reconnecter à son corps, accueillir ses émotions et retrouver un mieux-être par la remise en mouvement.</p>
+    
+    <p class="texte-multicolore">La séance peut devenir un espace pour déposer ce qui est vécu, mieux accueillir ses émotions, apaiser ses tensions et renouer progressivement avec soi-même.</p>
 
-    <p>L'accompagnement s'appuie sur l'approche ADDI (Approche Développementale Dynamique et Intégrative), qui observe le sens de soi et l'organisation du mouvement, et qui explore, dans la relation, les réflexes archaïques, les réactions de redressement et d'équilibration, remis en jeu et vécus dans le corps. Il s'appuie aussi sur le Body-Mind Centering (BMC), une attention fine portée au toucher et au processus qui se déploie dans l'instant.</p>
+    <!-- NOUVELLE GRILLE RESSENTIS -->
+    <div class="ressenti-grid" style="margin-bottom: 2.5rem;">
+        <div class="ressenti-carte">
+            <div class="ressenti-icone" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M24 30c-8-5-13-9.5-13-15A7 7 0 0 1 24 11a7 7 0 0 1 13 4c0 5.5-5 10-13 15z"/>
+                    <path d="M8 38c2-4 6-6 10-6h6c3 0 5-1 7-3l6-6"/>
+                </svg>
+            </div>
+            <h3>Se sentir COMPRIS</h3>
+            <p>Les ressentis sont validés.</p>
+            <p class="ressenti-citation">« Oui, ce que tu vis là est réel et important. »</p>
+        </div>
+        <div class="ressenti-carte">
+            <div class="ressenti-icone" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M24 40V22"/>
+                    <path d="M24 24c0-7-5-12-12-12 0 7 5 12 12 12z"/>
+                    <path d="M24 20c0-6 4.5-11 11-11 0 6-4.5 11-11 11z"/>
+                </svg>
+            </div>
+            <h3>Se sentir VIVANT</h3>
+            <p>Être rejoint dans son élan vital, ressentir une énergie intérieure affirmée.</p>
+        </div>
+        <div class="ressenti-carte">
+            <div class="ressenti-icone" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="24" cy="24" r="7"/>
+                    <path d="M24 4v6M24 38v6M44 24h-6M10 24H4M37.6 10.4l-4.2 4.2M14.6 33.4l-4.2 4.2M37.6 37.6l-4.2-4.2M14.6 14.6l-4.2-4.2"/>
+                </svg>
+            </div>
+            <h3>Se sentir EXISTANT</h3>
+            <p>Pouvoir être soi-même, sans masque.</p>
+            <p class="ressenti-citation">« Je peux exister pleinement. »</p>
+        </div>
+    </div>
 
+    <p>L'accompagnement s'appuie sur l'approche ADDI (Approche Développementale Dynamique et Intégrative), qui observe le sens de soi et l'organisation du mouvement, et qui explore, dans la relation, les réflexes archaïques, les réactions de redressement et d'équilibration, remises en jeu et vécues dans le corps. Il s'appuie aussi sur le Body-Mind Centering (BMC), une attention fine portée au toucher et au processus qui se déploie dans l'instant.</p>
+
+    <!-- GRILLE CLASSIQUE MISE À JOUR -->
     <div class="grid">
       <div class="card">
         <h3>Pour qui&nbsp;?</h3>
-        <p>Adultes en surmenage ou en quête de mieux-être corporel et émotionnel. Aucun prérequis de danse ou d'art.</p>
+        <p>Pour des personnes âgées ou en situation de handicap, en quête de mieux-être corporel et émotionnel. Aucun prérequis en danse ou en art n'est nécessaire.</p>
       </div>
       <div class="card">
         <h3>L'approche</h3>
@@ -201,7 +297,13 @@
       </div>
     </div>
 
-    <div class="contact">
+    <!-- BOUTON PRENDRE RDV (Ajouté depuis votre code) -->
+    <div class="cta-zone">
+      <a href="#contact" class="btn">Prendre rendez-vous</a>
+    </div>
+
+    <!-- BLOC CONTACT (J'ai ajouté id="contact" pour que le bouton fonctionne) -->
+    <div class="contact" id="contact">
       <h2>Contact</h2>
       <p class="nom">Nicolas Charreyre</p>
       <p>Pour prendre rendez-vous ou poser une question, n'hésitez pas à m'écrire ou à m'appeler.</p>
@@ -211,7 +313,6 @@
       <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
     </div>
 
-    <!-- CORRECTION ICI : Le nom du fichier correspond exactement à ce qu'il y a sur GitHub -->
     <img class="photo-nico" src="visage_nico.png" alt="Photo de Nicolas Charreyre">
 
     <div class="cta-zone">
