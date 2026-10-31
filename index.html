@@ -95,7 +95,6 @@
   }
   
   .texte-multicolore {
-    /* On agrandit le fond pour pouvoir le faire glisser */
     background: linear-gradient(90deg, #D35400, #F39C12, #27AE60, #2980B9, #D35400);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -108,12 +107,9 @@
     font-weight: 600;
     margin-bottom: 1rem;
     text-shadow: none; 
-    
-    /* L'animation qui fait bouger les couleurs */
     animation: glisse-arc-en-ciel 4s linear infinite;
   }
   
-  /* L'animation elle-même */
   @keyframes glisse-arc-en-ciel {
     0% { background-position: 0% center; }
     100% { background-position: -200% center; }
@@ -123,9 +119,10 @@
     margin-bottom: 0;
   }
 
+  /* Grille adaptée pour 2 cartes (Pour qui / L'approche) */
   .grid, .ressenti-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.2rem;
     margin: 2rem 0 2.5rem;
   }
@@ -146,7 +143,6 @@
   .card p { font-size: 0.98rem; margin-bottom: 0; text-shadow: none; }
   .card:nth-child(1) { border-top: 5px solid #0D9488; }
   .card:nth-child(2) { border-top: 5px solid #0277BD; }
-  .card:nth-child(3) { border-top: 5px solid #D97706; }
   
   .ressenti-carte {
     background: rgba(255, 255, 255, 0.25);
@@ -261,10 +257,11 @@
 
     <p>Je me déplace à domicile pour des séances individuelles et personnalisées.</p>
 
+    <!-- BLOC MULTICOLORE ANIMÉ -->
     <div class="bloc-multicolore">
-        <p class="texte-multicolore">Un temps de rencontre pour ralentir, respirer, se détendre, se reconnecter à son corps, accueillir ses émotions et retrouver un mieux-être par la remise en mouvement.</p>
+        <p class="texte-multicolore">Un temps de rencontre pour respirer, se détendre, se reconnecter à son corps et retrouver un mieux-être par la remise en mouvement.</p>
         
-        <p class="texte-multicolore">La séance peut devenir un espace pour déposer ce qui est vécu, mieux accueillir ses émotions, apaiser ses tensions et renouer progressivement avec soi-même et laisser une ressource intérieure profonde.</p>
+        <p class="texte-multicolore">La séance peut devenir un espace pour déposer ce qui est vécu, mieux accueillir ses émotions, apaiser ses tensions, renouer progressivement avec soi-même et laisser émerger une ressource intérieure profonde.</p>
     </div>
 
     <div class="ressenti-grid" style="margin-bottom: 2.5rem;">
@@ -303,8 +300,10 @@
         </div>
     </div>
 
-    <p>L'accompagnement s'appuie sur l'approche ADDI (Approche Développementale Dynamique et Intégrative), qui observe le sens de soi et l'organisation du mouvement, et qui explore, dans la relation, les réflexes archaïques, les réactions de redressement et d'équilibration, remises en jeu et vécues dans le corps. Il s'appuie aussi sur le Body-Mind Centering (BMC), une attention fine portée au toucher et au processus qui se déploie dans l'instant.</p>
+    <!-- TEXTE ADDI CORRIGÉ -->
+    <p>L'accompagnement s'appuie sur l'approche ADDI (Approche Développementale Dynamique et Intégrative), qui observe le sens de soi et l'organisation du mouvement, et qui explore, dans la relation, les réflexes, les réactions de redressement et d'équilibration, remobilisés dans le corps. Il s'appuie aussi sur l'approche du Body-Mind Centering (BMC), une attention fine portée au toucher et aux processus corporels qui se déploient dans l'instant.</p>
 
+    <!-- GRILLE AVEC SEULEMENT 2 CARTES -->
     <div class="grid">
       <div class="card">
         <h3>Pour qui&nbsp;?</h3>
@@ -313,10 +312,6 @@
       <div class="card">
         <h3>L'approche</h3>
         <p>Se reconnecter à son corps, accueillir ses émotions et retrouver un mieux-être par le mouvement, l'expression gestuelle et l'art.</p>
-      </div>
-      <div class="card">
-        <h3>Le cadre</h3>
-        <p>Séances individuelles, dans un espace bienveillant et confidentiel.</p>
       </div>
     </div>
 
