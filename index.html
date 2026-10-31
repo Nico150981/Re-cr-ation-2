@@ -84,9 +84,8 @@
     text-shadow: 0 1px 4px rgba(255,255,255,0.9);
   }
 
-  /* --- NOUVEAU BLOC MULTICOLORE AVEC FOND BLANC TRANSLUCIDE --- */
+  /* --- EFFET MULTICOLORE ANIMÉ --- */
   .bloc-multicolore {
-    /* Ligne de couleur à gauche + fond blanc translucide */
     background: linear-gradient(to bottom, #D35400, #F39C12, #27AE60, #2980B9) left / 6px 100% no-repeat, rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(8px);
     border-radius: 12px;
@@ -96,7 +95,9 @@
   }
   
   .texte-multicolore {
-    background: linear-gradient(90deg, #D35400, #F39C12, #27AE60, #2980B9);
+    /* On agrandit le fond pour pouvoir le faire glisser */
+    background: linear-gradient(90deg, #D35400, #F39C12, #27AE60, #2980B9, #D35400);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -106,10 +107,18 @@
     font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    text-shadow: none; /* On enlève l'ombre pour que les couleurs soient pures */
+    text-shadow: none; 
+    
+    /* L'animation qui fait bouger les couleurs */
+    animation: glisse-arc-en-ciel 4s linear infinite;
   }
   
-  /* Enlève la marge du bas pour le dernier paragraphe du bloc */
+  /* L'animation elle-même */
+  @keyframes glisse-arc-en-ciel {
+    0% { background-position: 0% center; }
+    100% { background-position: -200% center; }
+  }
+  
   .texte-multicolore:last-child {
     margin-bottom: 0;
   }
@@ -252,7 +261,6 @@
 
     <p>Je me déplace à domicile pour des séances individuelles et personnalisées.</p>
 
-    <!-- BLOC MULTICOLORE AVEC FOND BLANC TRANSLUCIDE -->
     <div class="bloc-multicolore">
         <p class="texte-multicolore">Un temps de rencontre pour ralentir, respirer, se détendre, se reconnecter à son corps, accueillir ses émotions et retrouver un mieux-être par la remise en mouvement.</p>
         
