@@ -84,17 +84,26 @@
     text-shadow: 0 1px 4px rgba(255,255,255,0.9);
   }
 
-  /* --- EFFET MULTICOLORE --- */
+  /* --- NOUVEL EFFET MULTICOLORE FIDÈLE À L'ANCIEN SITE --- */
+  .bloc-multicolore {
+    border-left: 4px solid;
+    border-image: linear-gradient(to bottom, #D35400, #27AE60, #2980B9) 1;
+    padding-left: 1.2rem;
+    margin: 2rem 0;
+  }
+  
   .texte-multicolore {
-    background: linear-gradient(90deg, #0D9488, #0277BD, #D97706);
+    background: linear-gradient(90deg, #D35400, #F39C12, #27AE60, #2980B9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    font-weight: 600;
-    /* On remplace l'ombre classique par un drop-shadow compatible avec le texte transparent */
-    filter: drop-shadow(0px 1px 1px rgba(255,255,255,0.8));
-    font-size: 1.1rem;
+    font-family: var(--police-titres);
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-shadow: none; /* On retire l'ombre qui délavait les couleurs */
   }
 
   .grid, .ressenti-grid {
@@ -104,7 +113,6 @@
     margin: 2rem 0 2.5rem;
   }
   
-  /* Cartes classiques */
   .card {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 14px;
@@ -123,7 +131,6 @@
   .card:nth-child(2) { border-top: 5px solid #0277BD; }
   .card:nth-child(3) { border-top: 5px solid #D97706; }
   
-  /* Nouvelles cartes "Ressentis" */
   .ressenti-carte {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 14px;
@@ -237,12 +244,14 @@
 
     <p>Je me déplace à domicile pour des séances individuelles et personnalisées.</p>
 
-    <!-- APPLICATION DE L'EFFET MULTICOLORE -->
-    <p class="texte-multicolore">Un temps de rencontre pour ralentir, respirer, se détendre, se reconnecter à son corps, accueillir ses émotions et retrouver un mieux-être par la remise en mouvement.</p>
-    
-    <p class="texte-multicolore">La séance peut devenir un espace pour déposer ce qui est vécu, mieux accueillir ses émotions, apaiser ses tensions et renouer progressivement avec soi-même.</p>
+    <!-- BLOC MULTICOLORE AVEC BARRE VERTICALE -->
+    <div class="bloc-multicolore">
+        <p class="texte-multicolore">Un temps de rencontre pour ralentir, respirer, se détendre, se reconnecter à son corps, accueillir ses émotions et retrouver un mieux-être par la remise en mouvement.</p>
+        
+        <!-- PHRASE 3 CORRIGÉE ICI -->
+        <p class="texte-multicolore">La séance peut devenir un espace pour déposer ce qui est vécu, mieux accueillir ses émotions, apaiser ses tensions et renouer progressivement avec soi-même et laisser une ressource intérieure profonde.</p>
+    </div>
 
-    <!-- NOUVELLE GRILLE RESSENTIS -->
     <div class="ressenti-grid" style="margin-bottom: 2.5rem;">
         <div class="ressenti-carte">
             <div class="ressenti-icone" aria-hidden="true">
@@ -281,7 +290,6 @@
 
     <p>L'accompagnement s'appuie sur l'approche ADDI (Approche Développementale Dynamique et Intégrative), qui observe le sens de soi et l'organisation du mouvement, et qui explore, dans la relation, les réflexes archaïques, les réactions de redressement et d'équilibration, remises en jeu et vécues dans le corps. Il s'appuie aussi sur le Body-Mind Centering (BMC), une attention fine portée au toucher et au processus qui se déploie dans l'instant.</p>
 
-    <!-- GRILLE CLASSIQUE MISE À JOUR -->
     <div class="grid">
       <div class="card">
         <h3>Pour qui&nbsp;?</h3>
@@ -297,12 +305,10 @@
       </div>
     </div>
 
-    <!-- BOUTON PRENDRE RDV (Ajouté depuis votre code) -->
     <div class="cta-zone">
       <a href="#contact" class="btn">Prendre rendez-vous</a>
     </div>
 
-    <!-- BLOC CONTACT (J'ai ajouté id="contact" pour que le bouton fonctionne) -->
     <div class="contact" id="contact">
       <h2>Contact</h2>
       <p class="nom">Nicolas Charreyre</p>
@@ -310,7 +316,9 @@
       <p>📞 <a href="tel:0782637092">07 82 63 70 92</a></p>
       <p>📧 <a href="mailto:nicolaschochod@orange.fr">nicolaschochod@orange.fr</a></p>
       <p>🔗 <a href="https://www.linkedin.com/in/nicolas-charreyre-chochod-69037a6a/" target="_blank" rel="noopener">Mon profil LinkedIn</a></p>
-      <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
+      
+      <!-- PHRASE 2 CORRIGÉE ICI -->
+      <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire individuelle</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
     </div>
 
     <img class="photo-nico" src="visage_nico.png" alt="Photo de Nicolas Charreyre">
