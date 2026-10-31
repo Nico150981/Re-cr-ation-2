@@ -9,7 +9,7 @@
     --police-titres: Georgia, 'Times New Roman', serif;
     --police-corps: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --texte-titres: #292524;
-    --texte-corps: #57534E;
+    --texte-corps: #3b3835; /* Légèrement plus foncé pour rester lisible sur le fond */
     --accent: #0D9488;
     --accent-fonce: #0B7A70;
   }
@@ -28,9 +28,9 @@
   a { color: var(--accent); }
   a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-  /* J'ai baissé l'opacité de 0.85 à 0.3 pour l'en-tête */
+  /* En-tête très transparent (0.1) */
   .entete {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     padding: 2.5rem 1.5rem 1.5rem;
     text-align: center;
     backdrop-filter: blur(5px);
@@ -49,7 +49,7 @@
   .bande-transition blockquote {
     max-width: 620px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.5); /* Un peu plus transparent aussi */
+    background: rgba(255,255,255,0.2); /* Citation plus transparente */
     backdrop-filter: blur(5px);
     border-radius: 16px;
     padding: 1.1rem 1.4rem;
@@ -59,12 +59,12 @@
     color: var(--accent-fonce);
   }
 
-  /* C'EST ICI : La page du milieu est passée de 0.85 à 0.3 */
+  /* Le bloc principal est passé à 0.15 (très transparent) */
   .conteneur {
     max-width: 680px;
     margin: 0 auto;
     padding: 2.5rem 1.5rem 3rem;
-    background: rgba(255, 255, 255, 0.3); 
+    background: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(8px);
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -94,12 +94,13 @@
     margin: 2rem 0 2.5rem;
   }
   
-  /* Les petites cartes sont aussi plus transparentes (0.6) */
+  /* Cartes passées à 0.4 */
   .card {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 14px;
     padding: 1.3rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    backdrop-filter: blur(4px);
   }
   .card h3 {
     font-family: var(--police-titres);
@@ -112,14 +113,15 @@
   .card:nth-child(2) { border-top: 5px solid #0277BD; }
   .card:nth-child(3) { border-top: 5px solid #D97706; }
   
-  /* Le bloc contact est aussi plus transparent (0.6) */
+  /* Bloc contact passé à 0.4 */
   .contact {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 16px;
     padding: 1.8rem 1.5rem;
     margin: 2rem 0;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    backdrop-filter: blur(4px);
   }
   .contact .nom {
     font-family: var(--police-titres);
@@ -163,12 +165,13 @@
   }
   .btn:hover { background: var(--accent-fonce); }
 
+  /* Footer plus transparent */
   footer {
     text-align: center;
     padding: 2rem 1.5rem;
     font-size: 0.85rem;
     color: #444;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     margin-top: 2rem;
   }
@@ -178,7 +181,7 @@
 <body>
 
   <header class="entete">
-    <img src="" alt="Re création logo" style="background: rgba(255,255,255,0.5); min-height: 100px; min-width: 200px;">
+    <img src="" alt="Re création logo" style="background: rgba(255,255,255,0.3); min-height: 100px; min-width: 200px;">
   </header>
 
   <div class="bande-transition">
@@ -219,7 +222,7 @@
       <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
     </div>
 
-    <!-- Vérifiez bien ce nom : visage_nico.png ou visage nico.png ? -->
+    <!-- LA PHOTO -->
     <img class="photo-nico" src="visage_nico.png" alt="Photo de Nicolas Charreyre">
     <p class="legende-photo">Nicolas Charreyre</p>
 
