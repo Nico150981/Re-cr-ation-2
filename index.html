@@ -129,23 +129,15 @@
   .contact a:hover { text-decoration: underline; }
   .tarifs { font-size: 0.95rem; margin-top: 0.8rem; }
 
-  /* CORRECTION ICI : J'ai enlevé la bordure blanche pour éviter le double rond */
+  /* CORRECTION DE L'IMAGE ICI */
   .photo-nico {
     display: block;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 2rem auto 0.6rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  }
-  
-  .legende-photo {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--texte-corps);
-    margin-bottom: 2.2rem;
-    text-shadow: 0 1px 3px rgba(255,255,255,0.9);
+    width: 100%;
+    max-width: 220px; /* Taille max pour que l'image ne soit pas énorme */
+    height: auto;
+    margin: 2.5rem auto 1rem;
+    /* J'ai enlevé border-radius et object-fit pour ne pas couper votre image */
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
   }
 
   .cta-zone { text-align: center; margin-top: 1rem; }
@@ -219,9 +211,10 @@
       <p class="tarifs"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;">Grille tarifaire solidaire</a>&nbsp;: de 20&nbsp;€ à 80&nbsp;€ pour une séance d'environ 1h30 (environ 1h lorsque je me déplace à votre domicile), selon vos revenus</p>      
     </div>
 
-    <!-- LA PHOTO -->
-    <img class="photo-nico" src="visage_nico.png" alt="Photo de Nicolas Charreyre">
-    <p class="legende-photo">Nicolas Charreyre</p>
+    <!-- L'IMAGE EST MAINTENANT AFFICHÉE EN ENTIER -->
+    <img class="photo-nico" src="visage nico.png" alt="Photo de Nicolas Charreyre">
+    
+    <!-- J'AI SUPPRIMÉ LA LÉGENDE ICI CAR LE NOM EST DÉJÀ DANS L'IMAGE -->
 
     <div class="cta-zone">
       <a class="btn" href="https://nico150981.github.io/danse-therapie-addi-mediation-creative-mornant/site-final/#accueil">Découvrir mon activité en détail →</a>
